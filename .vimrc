@@ -4,18 +4,25 @@
 " To have vim-latex plugin automatic loaded in .tex files
 let g:tex_flavor='latex'
 
-" associate *.gpl with GNUplot filetype
+" associate *.gpl and *.plt with GNUplot filetype
 au BufRead,BufNewFile *.gpl setfiletype gnuplot
+au BufRead,BufNewFile *.plt setfiletype gnuplot
 
 " Sets how many lines of history VIM has to remember
 set history=50
 
-" Apre automaticamente Tlist
+" TODO fix to work with NERDTree
+" Open taglist on vim startup
 "let Tlist_Auto_open=1
-"let Tlist_Auto_Update=0
+" Automatically highlight the current tag in the taglist
+"let Tlist_Auto_Highlight_Tag=1
+" Automatically uprate the taglist to include newly edited files
+"let Tlist_Auto_Update=1
+" Place the taglist on the right side
+"let Tlist_Use_Right_Window=1
+"let Tlist_Exit_OnlyWindow=1
+"let Tlist_Highlight_Tag_On_BufEnter=1
 
-" Apre automaticamente TagBar per ogni tab
-"autocmd BufEnter * nested :call tagbar#autoopen(0)
 
 " no-compatible
 set nocp
@@ -23,6 +30,7 @@ set nocp
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
+
 " configure tags - add additional tags here or comment out not-used ones
 "set tags+=~/.vim/tags/cpp
 "set tags+=~/.vim/tags/gl
