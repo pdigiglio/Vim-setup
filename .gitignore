@@ -1,0 +1,7 @@
+# Ignore all files and directories
+*
+# but my .vimrc and my .vim directory
+!.vimrc
+!.vim/*
+# and .gitignore
+!.gitignore
