@@ -1,7 +1,10 @@
-# Ignore all files and directories
+# Ignore all files and directories in this directory
 *
-# but my .vimrc and my .vim directory
-!.vimrc
-!.vim/*
-# and .gitignore
+
+# except for .gitignore
 !.gitignore
+# and .vimrc config file and my .vim directory
+!.vimrc
+
+# THIS DOES NOT WORK
+#!.vim/
