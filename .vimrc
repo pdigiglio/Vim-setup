@@ -230,21 +230,27 @@ set statusline+=\ %4*  "switch to User4 highlight
 set statusline+=%m       "modified flag
 set statusline+=%*\   "switch to normal highlight
 set statusline+=%F\        "tail of the filename
-set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
-set statusline+=%{&ff}] "file format
+set statusline+=[ENCODING\ %{strlen(&fenc)?&fenc:'none'}] "file encoding
+set statusline+=[FORMAT\ %{&ff}] "file format
 "set statusline+=%w\ \ CWD:\ %{getcwd()}
-set statusline+=%h      "help file flag
+"set statusline+=%h      "help file flag (not needed with %y
 set statusline+=%4*  "switch to User4 highlight
 set statusline+=%r      "read only flag
 set statusline+=%*  "switch to normal highlight
 set statusline+=%y      "filetype
 set statusline+=%=      "left/right separator
-set statusline+=%6*\ %c\       "cursor column
-set statusline+=%3*  "switch to User3 highlight
-set statusline+=%l
-set statusline+=%5*/%L   "cursor line/total lines
-set statusline+=%3*  "switch to User4 highlight
-set statusline+=\ %P    "percent through file
+set statusline+=[ASCII\ \%03.3b] " ascii decimal number of character i am on
+								 " with the cursor
+set statusline+=[HEX\ \%02.2B] " HEX number of character i am on
+								 " with the cursor
+"set statusline+=%6*\ %c\       "cursor column
+"set statusline+=%3*  "switch to User3 highlight
+"set statusline+=%l
+"set statusline+=%5*/%L   "cursor line/total lines
+"set statusline+=%3*  "switch to User4 highlight
+"set statusline+=\ %P    "percent through file
+set statusline+=\ [POSITION\ (%c,%l)][%P]
+set statusline+=[LEN\ %L\ lines]
 
 "define 3 custom highlight groups
 hi User1 ctermbg=green ctermfg=red   guibg=green guifg=red
