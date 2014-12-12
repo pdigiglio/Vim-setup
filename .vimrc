@@ -93,7 +93,7 @@ set backspace=eol,start,indent
 set whichwrap+=<,>,[,]
 
 " Ignore case when searching
-set ignorecase
+"set ignorecase
 " When searching try to be smart about cases 
 set smartcase
 " Highlight search results
@@ -123,7 +123,6 @@ set novisualbell
 " Enable syntax highlighting
 syntax enable
 
-colorscheme desert
 "colorscheme evening
 "colorscheme pablo
 "colorscheme torte
@@ -131,11 +130,14 @@ set background=dark
 
 " Set extra options when running in GUI mode
 if has("gui_running")
+	colorscheme slate
 	set guioptions-=T
 	set guioptions+=e
 	set guioptions+=i "use a Vim icon
 	set t_Co=256
 	set guitablabel=%M\ %t
+else
+	colorscheme torte
 endif
 
 " Set utf8 as standard encoding and en_US as the standard language
