@@ -282,7 +282,7 @@ function! FileSize()
 	endif
 
 	" if it's less than 1 GB
-	if bites <= 1024 * 1024 * 1024
+	if bitys <= 1024 * 1024 * 1024
 		" return size in MB
 		return ( bytes / ( 1024 * 1024 ) ) . "MB"
 	endif
